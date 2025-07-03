@@ -1,6 +1,20 @@
 [
-    {"name": "Nina Dsouza", "relation": "Sister"},
-    {"name": "Liam Cooper", "relation": "Neighbour"},
-    {"name": "Ayesha Khan", "relation": "Family Friend"}
-  ]
-  
+  {
+    "name": "Ojas Shukla",
+    "email": "ojas@example.com",
+    "password": "test123",
+    "role": "Parent"
+  },
+  {
+    "name": "Admin User",
+    "email": "admin@example.com",
+    "password": "adminpass",
+    "role": "Admin"
+  },
+  {
+    "name": "Priya Verma",
+    "email": "priya@example.com",
+    "password": "priyapass",
+    "role": "Carer"
+  }
+]

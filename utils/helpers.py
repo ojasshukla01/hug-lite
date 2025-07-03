@@ -4,7 +4,7 @@ import os
 def read_jobs(filepath="data/submitted_jobs.json"):
     if not os.path.exists(filepath):
         return []
-    with open(filepath, "r") as f:
+    with open(filepath, "r", encoding="utf-8") as f:
         return [json.loads(line) for line in f if line.strip()]
 
 def write_jobs(jobs, filepath="data/submitted_jobs.json"):
