@@ -16,5 +16,11 @@
     "email": "priya@example.com",
     "password": "priyapass",
     "role": "Carer"
+  },
+  {
+    "name": "Kinjal",
+    "email": "kinjal@hug.com",
+    "password": "kin123",
+    "role": "Parent"
   }
 ]

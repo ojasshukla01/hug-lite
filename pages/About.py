@@ -1,16 +1,17 @@
 import streamlit as st
 from components.header import show_logo
 
-st.set_page_config(page_title="About Us")
+st.set_page_config(page_title="About HUG Lite", layout="centered")
 show_logo()
-st.title("🤝 About HUG Lite")
 
+st.title("ℹ️ About HUG Lite")
 st.markdown("""
-HUG Lite is a trusted care scheduling platform built for modern families.  
-We help parents, carers, and community members connect through simple tools for:
-- Booking care jobs
-- Coordinating pickups/dropoffs
-- Managing child-related responsibilities
+Welcome to **HUG Lite** – a trusted care network for parents, carers, and families.
 
-Built with ❤️ for busy humans.
+Our mission is to make it easy to:
+- 🚗 Coordinate pickups
+- 🧸 Book babysitters
+- 👨‍👩‍👧‍👦 Share child care responsibilities
+
+Whether you're a busy parent, a reliable carer, or a freelancer, HUG Lite is designed to help you manage the daily juggle with ease.
 """)
