@@ -1,0 +1,3 @@
+{"title": "Teacher", "type": "Babysitting", "location": "Melbourne", "time": "08:30", "paid": false, "rate": null, "status": "Accepted", "accepted_by": "Liam Cooper"}
+{"title": "Pickup", "type": "Transport", "location": "Sydney", "time": "09:00", "paid": true, "rate": 25, "status": "Pending", "accepted_by": null}
+{"title": "Dog Walker", "type": "Transport", "location": "Shell Cove", "time": "11:45", "paid": false, "rate": null, "status": "Pending", "accepted_by": null, "parent": "Ojas Shukla", "timestamp": "2025-07-15T17:57:39.362232"}

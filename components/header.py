@@ -1,5 +1,5 @@
 import streamlit as st
-import random 
+import random
 
 def show_logo():
     cols = st.columns([1, 4])
@@ -48,14 +48,12 @@ def show_topbar():
             border-radius: 6px;
             box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
         }}
-        .dropdown-content button {{
-            background: none;
-            border: none;
+        .dropdown-content a {{
+            display: block;
             padding: 10px 14px;
-            width: 100%;
-            text-align: left;
-            cursor: pointer;
+            text-decoration: none;
             font-size: 14px;
+            color: black;
         }}
         .dropdown:hover .dropdown-content {{
             display: block;
@@ -79,22 +77,35 @@ def show_topbar():
         <div class="dropdown">
             <button class="dropbtn">{initials}</button>
             <div class="dropdown-content">
-                <form method="post">
-                    <button name="menu" value="profile">👤 Profile</button>
-                    <button name="menu" value="logout">🚪 Logout</button>
-                </form>
+                <a href="#" onclick="window.location.href='?menu=profile'; return false;" style="
+                    display: block;
+                    padding: 10px 14px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    color: black;
+                ">👤 Profile</a>
+                <a href="#" onclick="window.location.href='?menu=logout'; return false;" style="
+                    display: block;
+                    padding: 10px 14px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    color: black;
+                ">🚪 Logout</a>
             </div>
         </div>
     """, unsafe_allow_html=True)
 
+    # Handle query param logic
     menu_action = st.query_params.get("menu")
 
     if menu_action == "logout":
-        # Set logout trigger
-        st.session_state["logout"] = True
         st.query_params.clear()
-        st.rerun()
+        st.session_state.clear()
+        st.switch_page("pages/Home.py")
 
     elif menu_action == "profile":
-        st.info("👤 Profile page coming soon...")
         st.query_params.clear()
+        st.info("👤 Profile page coming soon...")
+
+    if not st.session_state.get("authenticated"):
+        return

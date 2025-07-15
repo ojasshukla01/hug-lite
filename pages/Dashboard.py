@@ -39,8 +39,12 @@ if st.session_state.notifications:
 
 # ------------------ Utility Functions ------------------ #
 def get_initials(name):
+    if not isinstance(name, str) or not name.strip():
+        return "U"
     parts = name.strip().split()
-    return "".join(p[0].upper() for p in parts[:2]) if parts else "U"
+    return "".join(p[0].upper() for p in parts[:2])
+
+
 
 def avatar_html(initials, bg="#4CAF50"):
     return f"""
@@ -117,8 +121,8 @@ with tabs[0]:
                             "timestamp": datetime.now().isoformat()
                         }
                         os.makedirs("data", exist_ok=True)
-                        with open("data/submitted_jobs.json", "a") as f:
-                            f.write(json.dumps(job_data) + "\\n")
+                        with open("data/submitted_jobs.ndjson", "a") as f:
+                            f.write(json.dumps(job_data) + "\n")
                         st.success(f"✅ Job '{title}' posted successfully!")
                         st.session_state.notifications.append(
                             f"🔀 New job posted: {title} in {location} at {job_time.strftime('%I:%M %p')}"
